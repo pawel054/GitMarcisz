@@ -21,8 +21,8 @@ namespace GitMarcisz
         }
         public void AktualizujListe()
         {
-            lista.itemsSource = null;
-            lista.itemsSource = produkty;
+            lista.ItemsSource = null;
+            lista.ItemsSource = produkty;
         }
         public MainPage()
         {
@@ -36,12 +36,12 @@ namespace GitMarcisz
         }
         public void Edytuj_Clicked(object sender,EventArgs e)
         {
-            wybranyProdukt = (Produkt)lista.selectedItem;
+            wybranyProdukt = (Produkt)lista.SelectedItem;
             Navigation.PushAsync(new ManageProduct(wybranyProdukt));
         }
         public void Usun_Clicked(object sender,EventArgs e)
         {
-            wybranyProdukt = (Produkt)lista.selectedItem;
+            wybranyProdukt = (Produkt)lista.SelectedItem;
             produkty.Remove(wybranyProdukt);
             AktualizujListe();
         }
