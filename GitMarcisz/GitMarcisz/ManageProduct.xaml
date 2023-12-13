@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GitMarcisz.ManageProduct">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Label x:Name="labelTytul" Text="Dodaj produkt" TextColor="Black" FontSize="30" HorizontalOptions="Center" Margin="0,30,0,40"/>
+            <Entry x:Name="entryNazwa" Placeholder="Nazwa" VerticalTextAlignment="Center" HorizontalOptions="Center" Margin="0,0,0,20"/>
+            <Entry x:Name="entryCena" Placeholder="Cena" VerticalTextAlignment="Center" HorizontalOptions="Center" Margin="0,0,0,20"/>
+            <Entry x:Name="entryIlosc" Placeholder="Ilosc" VerticalTextAlignment="Center" HorizontalOptions="Center" Margin="0,0,0,50"/>
+            <Button x:Name="btnDodaj" Text="Dodaj" BackgroundColor="Green" TextColor="White" CornerRadius="15" Clicked="BtnDodajClicked"/>
+            <Button x:Name="btnEdytuj" Text="Edytuj" BackgroundColor="Blue" TextColor="White" CornerRadius="15" IsVisible="False" Clicked="BtnEdytujClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
