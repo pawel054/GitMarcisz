@@ -36,14 +36,30 @@ namespace GitMarcisz
         }
         public void Edytuj_Clicked(object sender,EventArgs e)
         {
-            wybranyProdukt = (Produkt)lista.SelectedItem;
-            Navigation.PushAsync(new ManageProduct(wybranyProdukt));
+            if(lista.SelectedItem != null)
+            {
+                wybranyProdukt = (Produkt)lista.SelectedItem;
+                Navigation.PushAsync(new ManageProduct(wybranyProdukt));
+                wybranyProdukt = null;
+            }
+            else
+            {
+                DisplayAlert("Błąd", "Nie wybrano elementu", "OK");
+            }
         }
         public void Usun_Clicked(object sender,EventArgs e)
         {
-            wybranyProdukt = (Produkt)lista.SelectedItem;
-            produkty.Remove(wybranyProdukt);
-            AktualizujListe();
+            if(lista.SelectedItem != null)
+            {
+                wybranyProdukt = (Produkt)lista.SelectedItem;
+                produkty.Remove(wybranyProdukt);
+                AktualizujListe();
+                wybranyProdukt = null;
+            }
+            else
+            {
+                DisplayAlert("Błąd", "Nie wybrano elementu", "OK");
+            }
         }
     }
 }
