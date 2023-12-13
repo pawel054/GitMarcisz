@@ -37,9 +37,9 @@ namespace GitMarcisz
         {
             if(!string.IsNullOrEmpty(entryNazwa.Text) && !string.IsNullOrEmpty(entryCena.Text) && !string.IsNullOrEmpty(entryIlosc.Text))
             {
-                if(int.TryParse(entryIlosc.Text, out int _) && double.TryParse(entryCena.Text, out double _))
+                if(int.TryParse(entryIlosc.Text, out int _) && decimal.TryParse(entryCena.Text, out decimal _))
                 {
-                    var produkt = new Produkt(entryNazwa.Text, double.Parse(entryCena.Text), int.Parse(entryIlosc.Text));
+                    var produkt = new Produkt(entryNazwa.Text, decimal.Parse(entryCena.Text), int.Parse(entryIlosc.Text));
                     produkty.Add(produkt);
                     Navigation.PopAsync();
                 }
@@ -58,11 +58,11 @@ namespace GitMarcisz
         {
             if (!string.IsNullOrEmpty(entryNazwa.Text) && !string.IsNullOrEmpty(entryCena.Text) && !string.IsNullOrEmpty(entryIlosc.Text))
             {
-                if (int.TryParse(entryIlosc.Text, out int _) && double.TryParse(entryCena.Text, out double _))
+                if (int.TryParse(entryIlosc.Text, out int _) && decimal.TryParse(entryCena.Text, out decimal _))
                 {
                     wybranyProdukt.Nazwa = entryNazwa.Text;
-                    wybranyProdukt.Cena = double.Parse(entryCena.Text);
-                    wybranyProdukt.Ilosc = double.Parse(entryIlosc.Text);
+                    wybranyProdukt.Cena = decimal.Parse(entryCena.Text);
+                    wybranyProdukt.Ilosc = int.Parse(entryIlosc.Text);
                     Navigation.PopAsync();
                 }
                 else
